@@ -6,6 +6,7 @@ import com.alibaba.fastjson.JSON;
 import org.apache.log4j.BasicConfigurator;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
+import org.apache.log4j.PropertyConfigurator;
 import org.neo4j.driver.v1.*;
 
 import java.sql.Connection;
@@ -21,7 +22,8 @@ public class Rdb2Gdb
 
     static
     {
-        BasicConfigurator.configure();
+        //BasicConfigurator.configure();
+        PropertyConfigurator.configure("./conf/log4j.properties");
     }
 
     public static void main(String[] args)
