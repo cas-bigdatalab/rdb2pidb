@@ -1,0 +1,105 @@
+
+{
+  //关系数据库的信息
+  "url4Rdb": "jdbc:mysql://192.168.192.129:3306/test",
+  "rUserName": "root",
+  "rPassword": "123456",
+  "rdbDriverClass": "com.mysql.jdbc.Driver",
+
+
+ /* "tableName": "province",
+  "cols": [
+    {
+      "colName": "id",
+      "colType": "int"
+    },
+    {
+      "colName": "name",
+      "colType": "String"
+    }
+  ],*/
+
+
+  //要导入的目标表的信息
+  "tableName": "person",
+  "cols": [
+    {
+      "colName": "id",
+      /* 可以取如下几个值
+          Number(bit, tinyint, samllint, mediumint, int, integer, bigint, float, decimal, dec, real, double)
+        | String(char, varchar, tinytext, mediumtext, longtext, text, binary, varbinary, enum, set)
+        | Boolean(bool, boolean)
+        | Datetime(time, date, datetime, timestamp, year)
+        | Blob(tinyblob, mediumblob, longblob)
+      */
+      "colType": "int"
+    },
+    {
+      "colName": "name",
+      "colType": "String"
+    },
+    {
+      "colName": "photo",
+      "colType": "Blob"
+    },
+    {
+      "colName": "hometownId",
+      "colType": "int"
+    },
+    {
+      "colName": "departmentId",
+      "colType": "int"
+    }
+  ],
+
+  //外键信息
+  "foreignKeys":
+  [
+    {
+      "foreignKey": "hometownId",
+      "referenceKey": "id",
+      "foreignKeyDesc": "foreign key(hometownId) references province(id)",
+      "referenceTableInfo":
+      {
+        "tableName": "province",
+        "cols": [
+          {
+            "colName": "id",
+            "colType": "int"
+          },
+          {
+            "colName": "name",
+            "colType": "String"
+          }
+        ]
+      }
+    },
+    {
+      "foreignKey": "departmentId",
+      "referenceKey": "id",
+      "foreignKeyDesc": "foreign key(departmentId) references department(id)",
+      "referenceTableInfo":
+      {
+        "tableName" : "department",
+        "cols":
+        [
+          {
+            "colName": "id",
+            "colType": "int"
+          },
+          {
+          "colName": "name",
+          "colType": "String"
+        }
+        ]
+      }
+    }
+  ],
+
+  //图数据库的连接信息
+  "url4Gdb": "bolt://localhost:7687",
+  "gUserName": "neo4j",
+  "gPassword": "123456",
+  "gdbName": "graphdb-name"
+}
+
