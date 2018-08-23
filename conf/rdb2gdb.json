@@ -6,20 +6,6 @@
   "rPassword": "123456",
   "rdbDriverClass": "com.mysql.jdbc.Driver",
 
-
- /* "tableName": "province",
-  "cols": [
-    {
-      "colName": "id",
-      "colType": "int"
-    },
-    {
-      "colName": "name",
-      "colType": "String"
-    }
-  ],*/
-
-
   //要导入的目标表的信息
   "tableName": "person",
   "cols": [
@@ -90,7 +76,7 @@
           {
           "colName": "name",
           "colType": "String"
-        }
+          }
         ]
       }
     }

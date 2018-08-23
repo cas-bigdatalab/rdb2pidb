@@ -18,7 +18,7 @@ import java.util.List;
 
 public class Rdb2Gdb
 {
-    private static Logger logger = LogManager.getLogger(Rdb2Gdb.class);
+    private static Logger logger = LogManager.getLogger(Rdb2Gdb.class.getName());
 
     static
     {
